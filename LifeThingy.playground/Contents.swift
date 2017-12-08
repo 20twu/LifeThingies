@@ -52,8 +52,8 @@ living = true
 
 //Function for going to school for 12 yrs, goes to different schools depending on the amount of money you inherited from parents
     func goToSchool(_ name: String){
-    var year = 6
-    while year < 18 {
+    var year = 5
+    while year < 17 {
         if money > 0
         {
             privateSchool()
