@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController  {
+    func objectFromString(_ string: String) -> AnyObject? {
+        return NSClassFromString(string)
+    }
     
     @IBOutlet weak var AddName: UITextField!
     
@@ -105,9 +107,11 @@ class ViewController: UIViewController {
             }
         }
     }
+
+    
     @IBAction func Start(_ sender: Any) {
-        let AddName.text = life()
-        AddName.text.getBorn()
+        let objectFromString(AddName.text) = life()
+        
     
     }
  
