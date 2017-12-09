@@ -9,11 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController  {
-    func objectFromString(_ string: String) -> AnyObject? {
-        return NSClassFromString(string)
-    }
-    
+
     @IBOutlet weak var AddName: UITextField!
+    @IBOutlet weak var returnedText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,30 +75,30 @@ class ViewController: UIViewController  {
         }
         
         //Function for going to school for 12 yrs, goes to different schools depending on the amount of money you inherited from parents
-        func goToSchool(_ name: String){
+        func goToSchool(_ name: String) -> String?{
             var year = 5
             while year < 17 {
                 if money > 0
                 {
                     privateSchool()
                     year += 1
-                    print("At age \(year), \(name) went to a private school")
+                    return "\n At age \(year), \(name) went to a private school"
                 } else if money > -100001
                 {
                     publicSchool()
                     year += 1
-                    print("At age \(year), \(name) went to a public school")
+                    return "\n At age \(year), \(name) went to a public school"
                 } else {
                     childWork()
                     year += 1
-                    print("At age \(year), \(name) had the fun time of working as a totally legal child labourer")
+                    return "\n At age \(year), \(name) had the fun time of working as a totally legal child labourer"
                 }
             }
             
         }
         // Spaghetti func for now as I figure out how to do this in another func
         func addict() -> String{
-            if life().addiction == true{
+            if self.addiction == true{
                 return "addicted to drugs"
             } else {
                 return "not addicated to drugs"
@@ -110,9 +108,10 @@ class ViewController: UIViewController  {
 
     
     @IBAction func Start(_ sender: Any) {
-        let objectFromString(AddName.text) = life()
-        
-    
+        let person = life()
+        person.getBorn()
+        returnedText.text = "At birth \(AddName.text!) has \(person.money) money"
+       returnedText.text = person.goToSchool(AddName.text!)
     }
  
 }
