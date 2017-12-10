@@ -96,14 +96,7 @@ class ViewController: UIViewController  {
             }
             
         }
-        // Spaghetti func for now as I figure out how to do this in another func
-        func addict() -> String{
-            if self.addiction == true{
-                return "addicted to drugs"
-            } else {
-                return "not addicated to drugs"
-            }
-        }
+        
     }
 
     
@@ -111,7 +104,6 @@ class ViewController: UIViewController  {
         let person = life()
         person.getBorn()
         returnedText.text = "At birth \(AddName.text!) has \(person.money) money"
-       returnedText.text = person.goToSchool(AddName.text!)
     }
  
 }

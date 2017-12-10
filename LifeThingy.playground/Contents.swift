@@ -6,28 +6,13 @@ class life {
     
     var intelligence = 0
     var money = 0
+    var addiction = false
+    var living = false
     
     func parents() -> UInt32 {
         return arc4random_uniform(6) + 1
     }
-    
-    func privateSchool(){
-        money -= 2000
-        intelligence += 5
-    }
-    func publicSchool(){
-        intelligence += 2
-    }
-    func childWork(){
-        money += 500
-        intelligence += 1
-    }
-    
-    func findWork(){}
-    
-    var addiction = false
-    var living = false
-    
+
     func getBorn(){
         let parentLevel:UInt32 = parents()
         
@@ -45,6 +30,20 @@ class life {
         living = true
     }
     
+    func privateSchool(){
+        money -= 2000
+        intelligence += 5
+    }
+    func publicSchool(){
+        intelligence += 2
+    }
+    func childWork(){
+        money += 500
+        intelligence += 1
+    }
+    
+    func findWork(){}
+
     func goToSchool(_ name: String){
         var year = 5
         while year < 17 {
@@ -66,13 +65,5 @@ class life {
         }
         
     }
-    func addict() -> String{
-        if self.addiction == true{
-            return "addicted to drugs"
-        } else {
-            return "not addicated to drugs"
-        }
-    }
+
 }
-
-

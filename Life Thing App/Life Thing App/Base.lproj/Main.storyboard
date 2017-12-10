@@ -49,7 +49,7 @@
                                             <action selector="Start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DNS-jQ-uSU"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="headTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4c3-6q-pJP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="headTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4c3-6q-pJP">
                                         <rect key="frame" x="87.5" y="322.5" width="200" height="314.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="KHV-JB-LuU"/>
