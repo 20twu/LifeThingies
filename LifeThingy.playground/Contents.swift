@@ -8,25 +8,22 @@ class life {
     var money = 0
     var addiction = false
     var living = false
+    var death:UInt32 = 0
     
-    func parents() -> UInt32 {
-        return arc4random_uniform(6) + 1
-    }
-
     func getBorn(){
-        let parentLevel:UInt32 = parents()
+        let parentLevel:UInt32 = arc4random_uniform(5) + 1
         
         if parentLevel == 5{
-            money += 200000
+            money += 20000
         }else if parentLevel == 4{
-            money += 100000
+            money += 10000
         }else if parentLevel == 2{
-            money -= 100000
+            money -= 10000
         }else if parentLevel == 1{
-            money -= 200000
+            money -= 20000
             addiction = true
         }
-        
+        self.death = arc4random_uniform(101)
         living = true
     }
     
@@ -52,7 +49,7 @@ class life {
                 privateSchool()
                 year += 1
                 print("At age \(year), \(name) went to a private school")
-            } else if money > -100001
+            } else if money > -10001
             {
                 publicSchool()
                 year += 1
@@ -67,3 +64,12 @@ class life {
     }
 
 }
+
+let bob = life()
+bob.getBorn()
+print(bob.intelligence)
+print(bob.money)
+bob.goToSchool("bob")
+print(bob.intelligence)
+print(bob.money)
+
