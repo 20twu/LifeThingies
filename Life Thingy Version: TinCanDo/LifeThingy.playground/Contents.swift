@@ -14,13 +14,15 @@ class life {
         let parentLevel:UInt32 = arc4random_uniform(5) + 1
         
         if parentLevel == 5{
-            money += numericCast(arc4random_uniform(40000) + 20000)
+            money += numericCast(arc4random_uniform(40001) + 20000)
         }else if parentLevel == 4{
-            money += numericCast(arc4random_uniform(30000) + 10000)
+            money += numericCast(arc4random_uniform(30001) + 10000)
+        }else if parentLevel == 3{
+            money += numericCast(arc4random_uniform(20001))
         }else if parentLevel == 2{
-            money -= numericCast(arc4random_uniform(30000) + 10000)
+            money -= numericCast(arc4random_uniform(30001) + 10000)
         }else if parentLevel == 1{
-            money -= numericCast(arc4random_uniform(40000) + 20000)
+            money -= numericCast(arc4random_uniform(40001) + 20000)
             addiction = true
         }
         self.death = arc4random_uniform(101)
