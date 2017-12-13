@@ -30,6 +30,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pVp-UH-n0R" userLabel="AddName">
                                         <rect key="frame" x="137.5" y="96.5" width="100" height="50"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="6BK-jo-aVn"/>
                                             <constraint firstAttribute="height" constant="50" id="ndk-4B-WdM"/>
                                         </constraints>
                                         <nil key="textColor"/>

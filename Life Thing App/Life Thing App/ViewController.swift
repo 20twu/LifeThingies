@@ -27,16 +27,31 @@ class ViewController: UIViewController  {
 
     //Initialises a new class of life
     class life {
-        //creates two Int variables for a specific instance of class life to have
+        
         var intelligence = 0
         var money = 0
+        var addiction = false
+        var living = false
+        var death:UInt32 = 0
+        var age = 0
         
-        //The function to give a random number when called by the parents function
-        func parents() -> UInt32 {
-            return arc4random_uniform(6) + 1
+        func getBorn(){
+            let parentLevel:UInt32 = arc4random_uniform(5) + 1
+            
+            if parentLevel == 5{
+                money += numericCast(arc4random_uniform(40000) + 20000)
+            }else if parentLevel == 4{
+                money += numericCast(arc4random_uniform(30000) + 10000)
+            }else if parentLevel == 2{
+                money -= numericCast(arc4random_uniform(30000) + 10000)
+            }else if parentLevel == 1{
+                money -= numericCast(arc4random_uniform(40000) + 20000)
+                addiction = true
+            }
+            self.death = arc4random_uniform(101)
+            living = true
         }
         
-        //Functions for which school the instance of life will go to or if they have no money, they will go to childWork
         func privateSchool(){
             money -= 2000
             intelligence += 5
@@ -49,49 +64,29 @@ class ViewController: UIViewController  {
             intelligence += 1
         }
         
-        //Unfinished finWork Function, probably will be determined by how much intelligence value each instance will have
         func findWork(){}
         
-        //Creates another two bool variables for instances
-        var addiction = false
-        var living = false
-        
-        //Function getBorn will decide what kind of parents the child will have and whether or not they are born addiction
-        func getBorn(){
-            let parentLevel:UInt32 = parents()
-            
-            if parentLevel == 5{
-                money += 200000
-            }else if parentLevel == 4{
-                money += 100000
-            }else if parentLevel == 2{
-                money -= 100000
-            }else if parentLevel == 1{
-                money -= 200000
-                addiction = true
-            }
-            
-            living = true
-        }
-        
-        //Function for going to school for 12 yrs, goes to different schools depending on the amount of money you inherited from parents
-        func goToSchool(_ name: String) -> String?{
-            var year = 5
-            while year < 17 {
-                if money > 0
+        func goToSchool(_ name: String){
+            age = 5
+            while age < 17 {
+                if money > 0 && self.death > age
                 {
                     privateSchool()
-                    year += 1
-                    return "\n At age \(year), \(name) went to a private school"
-                } else if money > -100001
+                    age += 1
+                    print("At age \(age), \(name) went to a private school")
+                } else if money > -20001 && self.death > age
                 {
                     publicSchool()
-                    year += 1
-                    return "\n At age \(year), \(name) went to a public school"
-                } else {
+                    age += 1
+                    print("At age \(age), \(name) went to a public school")
+                } else if self.death > age {
                     childWork()
-                    year += 1
-                    return "\n At age \(year), \(name) had the fun time of working as a totally legal child labourer"
+                    age += 1
+                    print("At age \(age), \(name) had the fun time of working as a totally legal child labourer")
+                } else{
+                    age = 1000
+                    print("At the age of \(self.death) \(name) died")
+                    
                 }
             }
             
@@ -99,11 +94,16 @@ class ViewController: UIViewController  {
         
     }
 
+
     
     @IBAction func Start(_ sender: Any) {
         let person = life()
         person.getBorn()
+        if AddName.text == ""{
+            returnedText.text = "Please insert name to play"
+        } else {
         returnedText.text = "At birth \(AddName.text!) has \(person.money) money"
+        }
     }
  
 }
