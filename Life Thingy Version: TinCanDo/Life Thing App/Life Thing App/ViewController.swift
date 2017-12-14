@@ -15,7 +15,7 @@ class ViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a knib.
     }
    
     
@@ -106,7 +106,11 @@ class ViewController: UIViewController  {
             returnedText.text = """
             Please insert name to play
             """
-        } else {
+        } else if person.death == 0{
+            returnedText.text = """
+            Unfortunately \(AddName.text!) did not survive the traumatic event of being born
+            """
+        }else{
         returnedText.text = """
             At birth \(AddName.text!) has \(person.money) money
             """
