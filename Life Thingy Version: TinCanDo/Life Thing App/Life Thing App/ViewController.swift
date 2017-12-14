@@ -103,17 +103,11 @@ class ViewController: UIViewController  {
         let person = life()
         person.getBorn()
         if AddName.text == ""{
-            returnedText.text = """
-            Please insert name to play
-            """
+            returnedText.text = "Please insert name to play"
         } else if person.death == 0{
-            returnedText.text = """
-            Unfortunately \(AddName.text!) did not survive the traumatic event of being born
-            """
+            returnedText.text = "Unfortunately \(AddName.text!) did not survive the traumatic event of being born"
         }else{
-        returnedText.text = """
-            At birth \(AddName.text!) has \(person.money) money
-            """
+        returnedText.text = "At birth \(AddName.text!) has \(person.money) money"
         }
     }
  
