@@ -9,61 +9,100 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
 
 //created class for variables
-    class genVar {
+class genVar {
+    
+    //time
+    var age: Int
+    var time: Int
+    
+    //resource
+    var intelligence: Double
+    var money: Double
+    
+    //basic emotions
+    var happyLvl: Double
+    var sadLvl: Double
+    var angerLvl:  Double
+    var disgustLvl: Double
+    var fearLvl: Double
+    var supriseLvl: Double
+    
+    //feelings
+    var prideLvl: Double
+    var sexxualArousalLvl: Double
+    var stabilityLvl: Double
+    
+    //conditions
+    var alive: Bool
+    var stilborn: Bool
+    var addiction: Bool
+    var depression: Bool
+    
+    //initialize base of all vars/bools
+    init () {
+        //time
+        age = 0
+        time = 0
         
-        //class for low fluct var
+        //resource
+        intelligence = 0
+        money = 0
         
-        //class for med fluct var
-        class medFluctVar {
+        //basic emotions
+        happyLvl = 0
+        sadLvl = 0
+        angerLvl = 0
+        disgustLvl = 0
+        fearLvl = 0
+        supriseLvl = 0
+        
+        //feelings
+        prideLvl = 0
+        sexxualArousalLvl = 0
+        stabilityLvl = 0
+        
+        //conditions
+        alive = false
+        stilborn = false
+        addiction = false
+        depression = false
+    }
+}
+
+class inherentModifiers: genVar {
+    var income: Double
+    
+    init () {
+        
+    }
+}
+
+class prelifeFunc: inherentModifiers {
+    func calcParentWealth() {
+        let parentWealth = arc4random_uniform(5) + 1
+        if parentWealth >= 5 {
+            money += 15000
             
-            var intelligence: Int = 0
-            var money: Int = 0
-            var age: Int = 0
-        }
-        
-        
-        //class for high fluct var
-        class mood{
-            
-            //class for basic emotions
-            class basicEmo {
-                
-                var happyLvl: Int = 0
-                var sadLvl: Int = 0
-                var angerLvl:  Int = 0
-                var disgustLvl: Int = 0
-                var fearLvl: Int = 0
-            }
-            
-            //class for feelings
-            class feel{
-                
-            var prideLvl: Int = 0
-            var sexxualArousalLvl: Int = 0
-            var stability: Int = 0
-            }
         }
     }
+    
+    func calcParentSkills() {
+        let parentSkills = arc4random_uniform(5) + 1
+        if parentSkills >= 5 {
             
-            
-//created class for boolean
-    class genBool {
-        
-        var living: Bool = false
-        var stilborn: Bool = false
-        var addiction: Bool = false
-        
+        }
     }
 }
