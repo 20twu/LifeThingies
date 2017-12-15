@@ -69,31 +69,31 @@ class ViewController: UIViewController  {
         
         func findWork(){}
         
-        func goToSchool(_ name: String){
+        func goToSchool(_ name: String) -> String{
             age = 5
             while age < 17 {
                 if money > 0 && self.death > age
                 {
                     privateSchool()
                     age += 1
-                    print("At age \(age), \(name) went to a private school")
+                    return("At age \(age), \(name) went to a private school")
                 } else if money > -20001 && self.death > age
                 {
                     publicSchool()
                     age += 1
-                    print("At age \(age), \(name) went to a public school")
+                    return("At age \(age), \(name) went to a public school")
                 } else if self.death > age {
                     childWork()
                     age += 1
                     print("At age \(age), \(name) had the fun time of working as a totally legal child labourer")
                 } else{
                     age = 1000
-                    print("At the age of \(self.death) \(name) died")
+                    return("At the age of \(self.death) \(name) died")
                     
                 }
             }
             
-        }
+return ""        }
         
     }
 
@@ -109,6 +109,7 @@ class ViewController: UIViewController  {
         }else{
         returnedText.text = "At birth \(AddName.text!) has \(person.money) money"
         }
+        returnedText.text += "\n \(person.goToSchool(AddName.text!))"
     }
  
 }
