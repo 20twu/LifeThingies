@@ -79,3 +79,6 @@ bob.goToSchool("bob")
 print(bob.intelligence)
 print(bob.money)
 bob.death
+
+
+
