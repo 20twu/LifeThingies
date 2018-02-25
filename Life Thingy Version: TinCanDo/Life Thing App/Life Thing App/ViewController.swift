@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController  {
 
     @IBOutlet weak var AddName: UITextField!
-    @IBOutlet weak var returnedText: UILabel!
+    @IBOutlet weak var returnedText: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,14 +93,14 @@ class ViewController: UIViewController  {
                 }
             }
             
-return ""        }
+            return ""        }
         
     }
 
 
     
     @IBAction func Start(_ sender: Any) {
-        let person = life()
+     /*   let person = life()
         person.getBorn()
         if AddName.text == ""{
             returnedText.text = "Please insert name to play"
@@ -109,8 +109,9 @@ return ""        }
         }else{
         returnedText.text = "At birth \(AddName.text!) has \(person.money) money"
         }
-        returnedText.text += "\n \(person.goToSchool(AddName.text!))"
+        returnedText.text! += "\n \(person.goToSchool(AddName.text!))"  */
     }
  
 }
+
 

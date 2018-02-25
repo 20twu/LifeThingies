@@ -22,13 +22,13 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Life" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCK-1H-zpf">
-                                        <rect key="frame" x="98.5" y="0.0" width="123" height="57"/>
+                                        <rect key="frame" x="98.5" y="0.0" width="123" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pVp-UH-n0R" userLabel="AddName">
-                                        <rect key="frame" x="110" y="87" width="100" height="50"/>
+                                        <rect key="frame" x="110" y="60" width="100" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="cXf-vY-yOy"/>
                                             <constraint firstAttribute="height" constant="50" id="ndk-4B-WdM"/>
@@ -41,7 +41,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyb-hS-5ZK">
-                                        <rect key="frame" x="120.5" y="167" width="79" height="100"/>
+                                        <rect key="frame" x="120.5" y="140" width="79" height="52.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Start Life">
                                             <color key="titleColor" red="0.33874489610000003" green="1" blue="0.9847138097" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,15 +50,9 @@
                                             <action selector="Start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DNS-jQ-uSU"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="headTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4c3-6q-pJP">
-                                        <rect key="frame" x="60" y="297" width="200" height="251"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="KHV-JB-LuU"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NK3-cq-vPw">
+                                        <rect key="frame" x="40" y="222.5" width="240" height="325.5"/>
+                                    </scrollView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -73,7 +67,7 @@
                     </view>
                     <connections>
                         <outlet property="AddName" destination="pVp-UH-n0R" id="nuP-Ix-TtN"/>
-                        <outlet property="returnedText" destination="4c3-6q-pJP" id="KbM-lM-NFO"/>
+                        <outlet property="returnedText" destination="NK3-cq-vPw" id="Bpc-3u-SJb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
